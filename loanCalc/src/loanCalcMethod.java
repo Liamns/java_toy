@@ -104,8 +104,8 @@ public class loanCalcMethod {
         
         loanCalc myLoan = new loanCalc();
         myLoan.loan = Double.parseDouble(JOptionPane.showInputDialog("대출금을 입력해주세요.(단위 : 만원)")) * 10000;
-        myLoan.maxRate = Double.parseDouble(JOptionPane.showInputDialog("최대 이자율을 입력해주세요(예 : 0.05)"));
         myLoan.minRate = Double.parseDouble(JOptionPane.showInputDialog("최소 이자율을 입력해주세요(예 : 0.01)"));
+        myLoan.maxRate = Double.parseDouble(JOptionPane.showInputDialog("최대 이자율을 입력해주세요(예 : 0.05)"));
         myLoan.redemptionPeriodYear = Integer.parseInt(JOptionPane.showInputDialog(null, "상환기간을 입력해주세요(연 단위)."));
         myLoan.redemptionMethod = JOptionPane.showConfirmDialog(null, "대출상환 방식을 선택해주세요 (예 : 원리금 / 아니오 : 원금)", null, 2);
 
