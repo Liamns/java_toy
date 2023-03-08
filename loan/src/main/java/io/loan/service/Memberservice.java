@@ -1,20 +1,33 @@
 package io.loan.service;
 
-import java.util.UUID;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
 
 import io.loan.entity.Member;
+import io.loan.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
 
-public interface Memberservice {
+@Service
+@RequiredArgsConstructor
+public class Memberservice {
+    private final MemberRepository memberRepository;
 
-    UUID create(Member member);
+    public Long save(Member member) {
+        memberRepository.save(Member.builder()
+                .loan(member.getLoan())
+                .minRate(member.getMinRate())
+                .maxRate(member.getMaxRate())
+                .redemptionYear(member.getRedemptionYear())
+                .redemptionMethod(member.getRedemptionMethod())
+                .build());
 
-    double getPrincipalInterestMonthly(int loan);
+        Long memberId = member.getId();
+        return memberId;
+    }
 
-    double rateMonthly();
-
-    double getRate(double minRate, double maxRate);
-
-    double getInterestYearly(int loan);
-
-    int getRedemptionMonth(int loan);
+    public Optional<Member> findById(Long id) {
+        Optional<Member> member = memberRepository.findById(id);
+        return member;
+    }
 }

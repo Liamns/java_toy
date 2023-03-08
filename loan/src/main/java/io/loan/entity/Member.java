@@ -1,30 +1,27 @@
 package io.loan.entity;
 
-import java.util.UUID;
-
 import com.google.gson.Gson;
 
-import io.loan.entity.dto.MemberDto;
 import io.loan.entity.vo.RedemptionMethod;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
+@Entity
 @Getter
-@ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@EqualsAndHashCode(of = "id")
+@Table(name = "MEMBER")
 public class Member {
 
-    private UUID id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private int loan;
     private double minRate;
     private double maxRate;
@@ -39,16 +36,6 @@ public class Member {
         this.maxRate = maxRate;
         this.redemptionYear = redemptionYear;
         this.redemptionMethod = redemptionMethod;
-    }
-
-    public MemberDto toDto() {
-        return MemberDto.builder()
-                .loan(loan)
-                .minRate(minRate)
-                .maxRate(maxRate)
-                .redemptionYear(redemptionYear)
-                .redemptionMethod(redemptionMethod)
-                .build();
     }
 
     public static Member sample() {
