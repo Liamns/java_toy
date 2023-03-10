@@ -1,4 +1,4 @@
-package io.loan.entity.vo;
+package io.liamns.loan.domain.vo;
 
 public enum RedemptionMethod {
     Principal,
