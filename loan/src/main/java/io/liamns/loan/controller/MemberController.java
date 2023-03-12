@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.liamns.loan.domain.dto.MemberDto;
 import io.liamns.loan.domain.entity.vo.RedemptionMethod;
 import io.liamns.loan.service.MemberService;
-import io.swagger.v3.oas.models.security.SecurityScheme.In;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @RestController

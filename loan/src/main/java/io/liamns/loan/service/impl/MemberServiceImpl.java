@@ -3,8 +3,6 @@ package io.liamns.loan.service.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
-import java.util.stream.Stream;
-
 import org.springframework.stereotype.Service;
 
 import io.liamns.loan.domain.dao.MemberDao;

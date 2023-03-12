@@ -2,7 +2,6 @@ package io.liamns.loan.service;
 
 import java.util.List;
 
-import io.liamns.loan.domain.dao.MemberDao;
 import io.liamns.loan.domain.dto.MemberDto;
 import io.liamns.loan.domain.entity.vo.RedemptionMethod;
 
