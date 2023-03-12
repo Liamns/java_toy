@@ -1,7 +1,7 @@
 package io.liamns.loan.domain.dto;
 
 import io.liamns.loan.domain.entity.Member;
-import io.liamns.loan.domain.vo.RedemptionMethod;
+import io.liamns.loan.domain.entity.vo.RedemptionMethod;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +12,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
 public class MemberDto {
 
     private Integer memberId;

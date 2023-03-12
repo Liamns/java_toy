@@ -1,7 +1,7 @@
 package io.liamns.loan.domain.entity;
 
 import io.liamns.loan.domain.dto.MemberDto;
-import io.liamns.loan.domain.vo.RedemptionMethod;
+import io.liamns.loan.domain.entity.vo.RedemptionMethod;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 public class Member {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private long loan;
